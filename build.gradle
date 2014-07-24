@@ -12,8 +12,12 @@ repositories {
 dependencies {
     compile(
             'org.springframework:spring-webmvc:4.0.6.RELEASE',
-            "javax.servlet:servlet-api:2.5"
+            'org.springframework:spring-mock:2.0.8',
+
+
     )
+    testCompile 'junit:junit:4.10'
+
 }
 
 task wrapper(type: Wrapper) {
