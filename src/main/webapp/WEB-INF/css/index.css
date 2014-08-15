@@ -1,0 +1,116 @@
+html {
+	background: rgb(231, 230, 231);
+}
+body {
+	min-width: 1000px;
+	max-width: 1200px;
+	margin: 4em auto;
+	padding:2em;
+	background: white;
+	position: relative;
+}
+h2 {
+	font-weight: bold;
+	font-size: 2em;
+	color:rgb(42, 105, 185);
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+.line {
+	border-bottom: solid rgb(243, 235, 235) thin;
+	margin-top:0.2em;
+}
+#nav{
+	margin-top: 1em;
+}
+#nav p{
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+	font-size: 0.8em;
+}
+#nav a {
+	padding-right: 2em;
+}
+#logo {
+	max-width:100%;
+	height:auto;
+}
+img {
+	margin-top: 1em;
+	max-width:100%;
+	height:auto;
+}
+#wrapper {
+	margin-top: 1em;
+	overflow: auto;
+}
+.content {
+	margin-left: 35%;
+}
+.content p {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	line-height: 1.5em;
+}
+.content .last_paragraph {
+	margin-top: 4em;
+	margin-bottom: 2em;
+}
+.slidebar {
+
+	float: left;
+    width: 30%;
+}
+.search_box {
+	margin:2em 0em;
+}
+input[type="text"] {
+	border-radius: 12px;
+	width: 13em;
+	color: rgb(184, 180, 180);
+}
+#footer p {
+	margin-top: 2em;
+	margin-bottom: 0;
+}
+.tags, .recent_posts {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.tags a, .recent_posts a{
+	text-decoration: underline;
+	padding-right: 0.2em;
+	color: rgb(184, 180, 180);
+}
+.tags p {
+	margin-top: 0.3em;
+	margin-bottom: 0.5em;
+}
+.tag_small a {
+	font-size: 0.7em;
+
+}
+.tag_big a{
+	font-size: 1.4em;
+	color :rgb(151, 147, 147);
+}
+.recent_posts p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.jump_links {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+	overflow: auto;
+}
+.jump_links a{
+	text-decoration: underline;
+}
+.jump_previous {
+	float: left;
+}
+.jump_forward {
+	float: right;
+}
