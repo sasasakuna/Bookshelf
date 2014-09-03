@@ -4,12 +4,6 @@ package com.thoughtworks.bs.domain;
  * Created by hjli on 8/12/14.
  */
 public class Book {
-    public Book(String isbn, String title, String author, String price) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.price = price;
-    }
 
     public String getIsbn() {
 
@@ -22,6 +16,24 @@ public class Book {
 
     private String isbn;
     private String title;
+
+    private String location;
+
+    public Book(String isbn, String title, String author, String price, String location) {
+        this.isbn = isbn;
+        this.title = title;
+        this.location = location;
+        this.author = author;
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public String getTitle() {
         return title;
