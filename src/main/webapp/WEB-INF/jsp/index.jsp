@@ -3,7 +3,6 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<!--<script type="text/javascript" src="js/index.js"></script>-->
 	<script>
@@ -48,6 +47,7 @@
 		<p>
 			<span><a href="javascript:void(0)">HOME</a></span>
 			<span><a href="javascript:void(0)">ABOUT ME</a></span>
+			<span><a href="${pageContext.request.contextPath}/login">LOGIN IN</a></span>
 		</p>
 		<div class="line"></div>
 	</div>

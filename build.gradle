@@ -17,7 +17,8 @@ dependencies {
             'mysql:mysql-connector-java:5.1.31',
             'commons-dbcp:commons-dbcp:1.4',
             'org.springframework:spring-jdbc:4.0.6.RELEASE',
-
+            'org.codehaus.jackson:jackson-core-asl:1.9.13',
+            'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 
     )
     testCompile 'junit:junit:4.10'

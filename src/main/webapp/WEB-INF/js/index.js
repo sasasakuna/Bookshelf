@@ -1,19 +1,29 @@
-
 function searchBooks(url){
-
-     $("input[type='submit']").click(function(){
+    $("input[type='submit']").click(function(){
         var searchTitle = $("#search-book").val();
-//        alert(url);
-        console.log(url);
-        console.log(url+"book");
-        $.ajax(function(){
+         $.ajax({
             type:"get",
-            data:{searchTitle:searchTitle},
             url:url+"book",
+            data:{searchTitle:searchTitle},
+            dataType:"json",
             success:function(data){
-//                $(".content").html(data);
-                console.log("success");
-            }
-        });
-     });
+                var resultList = "";
+                $.each(data,function(index,book){
+                    resultList += "<div class='border'></div>";
+                    resultList += "<dl>";
+                    resultList += "<dt>Book Title</dt>";
+                    resultList += "<dd>" + book.title +"</dd>";
+                    resultList += "<dt>Book Author</dt>";
+                    resultList += "<dd>" + book.author +"</dd>";
+                    resultList += "<dt>Book Price</dt>";
+                    resultList += "<dd>" + book.price +"</dd>";
+                    resultList += "</dl>";
+                    resultList += "<div class='border'></div>";
+                   // console.log("Book Name : "+book.title+"Book Author"+book.author+"Book Price"+book.price);
+                });
+                $(".content").html(resultList);
+            } // end success
+        }); //end .ajax
+    }); //end click
+
 }
