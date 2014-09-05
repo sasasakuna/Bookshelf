@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/security
+                http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/upload_expense" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/upload_timesheet" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/csvFile/employee" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/csvFile/upload" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/clean" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/clean/index" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/borrow/index" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/training-budget/borrowRecord" access="ROLE_ADMIN"/>
+        <security:form-login
+                login-page="/toLogin"
+                login-processing-url="/j_spring_security_check"
+                default-target-url="/index"
+                authentication-failure-url="/login?error=true"/>
+        <security:logout logout-success-url="/index" invalidate-session="true"/>
+    </security:http>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="admin" authorities="ROLE_ADMIN" password="98F6FAD709E28617CF0421CC885C484F"/>
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+</beans>
+
+

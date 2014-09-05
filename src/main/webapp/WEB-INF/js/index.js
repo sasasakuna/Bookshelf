@@ -3,7 +3,7 @@ function searchBooks(url){
         var searchTitle = $("#search-book").val();
          $.ajax({
             type:"get",
-            url:url+"book",
+            url:url+"books/" + searchTitle,
             data:{searchTitle:searchTitle},
             dataType:"json",
             success:function(data){

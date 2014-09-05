@@ -4,41 +4,8 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<!--<script type="text/javascript" src="js/index.js"></script>-->
-	<script>
-            $(function(){
-               // searchBooks("${pageContext.request.contextPath}/");
-               var url = "${pageContext.request.contextPath}/";
-                $("input[type='submit']").click(function(){
-                        var searchTitle = $("#search-book").val();
-                        $.ajax({
-                            type:"get",
-                            url:url+"book",
-                            data:{searchTitle:searchTitle},
-                            dataType:"json",
-                            success:function(data){
-                                var resultList = "";
-                                $.each(data,function(index,book){
-                                    resultList += "<div class='border'></div>";
-                                    resultList += "<dl>";
-                                    resultList += "<dt>Book Title</dt>";
-                                    resultList += "<dd>" + book.title +"</dd>";
-                                    resultList += "<dt>Book Author</dt>";
-                                    resultList += "<dd>" + book.author +"</dd>";
-                                    resultList += "<dt>Book Price</dt>";
-                                    resultList += "<dd>" + book.price +"</dd>";
-                                    resultList += "</dl>";
-                                    resultList += "<div class='border'></div>";
-                                   // console.log("Book Name : "+book.title+"Book Author"+book.author+"Book Price"+book.price);
-                                });
-                                $(".content").html(resultList);
-                           }
-                        }); //end .ajax
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 
-                     }); //end click
-
-            });
-    </script>
 </head>
 <body>
 	<div id="title"><h2>Book Shelf</h2></div>
@@ -101,6 +68,10 @@
 		<p>Proudly powered by WordPress</p>
 	</div>
 
-
+    <script>
+        $(function(){
+            searchBooks("${pageContext.request.contextPath}/");
+        });
+    </script>
 </body>
 </html>

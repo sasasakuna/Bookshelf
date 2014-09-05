@@ -42,7 +42,7 @@ public class BookDao {
 
     public List<Book> getBooksByTitle(String title) {
         List<Book> books = new ArrayList<Book>();
-        String sql = GET_BOOK + "%" + title + "%";
+        String sql = GET_BOOK + "\'%" + title + "%\'";
         books = jdbcTemplate.query(sql, new BookRowMapper());
         return books;
     }
