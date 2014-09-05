@@ -19,16 +19,19 @@ dependencies {
             'org.springframework:spring-jdbc:4.0.6.RELEASE',
             'org.codehaus.jackson:jackson-core-asl:1.9.13',
             'org.codehaus.jackson:jackson-mapper-asl:1.9.13',
-            'org.springframework.security:spring-security-core:3.1.0.RELEASE',
-            'org.springframework.security:spring-security-web:3.1.0.RELEASE',
-            'org.springframework.security:spring-security-config:3.1.0.RELEASE',
-            'org.springframework.security:spring-security-taglibs:3.1.0.RELEASE'
+//            'org.springframework.security:spring-security-core:3.1.0.RELEASE',
+//            'org.springframework.security:spring-security-web:3.1.0.RELEASE',
+//            'org.springframework.security:spring-security-config:3.1.0.RELEASE',
+//            'org.springframework.security:spring-security-taglibs:3.1.0.RELEASE',
+            'jstl:jstl:1.2',
+
 
     )
     testCompile 'junit:junit:4.10'
     testCompile 'org.mockito:mockito-all:1.9.5'
     testCompile 'org.springframework:spring-test:4.0.5.RELEASE'
     testCompile 'org.mockito:mockito-all:1.8.5'
+    testCompile 'org.hamcrest:hamcrest-all:1.1'
 
 }
 

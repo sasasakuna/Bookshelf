@@ -57,17 +57,17 @@ public class BookShelfController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-//    @RequestMapping(value = "/books/{isbn}", method = RequestMethod.DELETE)
-//    @ResponseBody
-//    public ResponseEntity removeBook(@PathVariable String isbn){
-//        bookService.removeBookByISBN(isbn);
-//        return new ResponseEntity(HttpStatus.OK);
-//    }
+    @RequestMapping(value = "/books/id/{isbn}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity removeBook(@PathVariable("isbn") String isbn){
+        bookService.removeBookByISBN(isbn);
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
-    @RequestMapping(value = "/books/{title}", method = RequestMethod.GET)
+    @RequestMapping(value = "/books/title/{title}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<Book>> getBooksByTitle(@PathVariable("title") String title){
-        System.out.println("getBooksByTitle");
+//        System.out.println("getBooksByTitle");
         List<Book> result = bookService.getBooksByTitle(title);
         if(result.size() == 0){
             return new ResponseEntity<List<Book>>(HttpStatus.NOT_FOUND);

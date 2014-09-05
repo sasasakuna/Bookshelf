@@ -1,9 +1,10 @@
 function searchBooks(url){
     $("input[type='submit']").click(function(){
         var searchTitle = $("#search-book").val();
+        console.log(url+"books/title/" + searchTitle);
          $.ajax({
             type:"get",
-            url:url+"books/" + searchTitle,
+            url:url+"books/title/" + searchTitle,
             data:{searchTitle:searchTitle},
             dataType:"json",
             success:function(data){
