@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,8 +29,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 
   </head>
 
@@ -45,20 +46,22 @@
             <div class="inner">
               <h3 class="masthead-brand">BookShelf</h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">ADD</a></li>
-                <li><a href="#">Remove</a></li>
-                <li><a href="${pageContext.request.contextPath}">Login Out</a></li>
+                <li class="active"><a href="#">添加</a></li>
+                <li><a href="#">移除</a></li>
+                <li><a href="${pageContext.request.contextPath}">退出</a></li>
               </ul>
             </div>
           </div>
 
           <div class="inner cover">
-            <script>
-                $(function(){
-                    loadAddPage("${pageContext.request.contextPath}/");
-                });
-            </script>
-
+              <div class="formWrapper">
+                <script>
+                    $(function(){
+                        console.log("load page add ...");
+                        loadPageAdd("${pageContext.request.contextPath}/");
+                    });
+                </script>
+              </div>
           </div>
 
           <div class="mastfoot">
@@ -78,5 +81,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            loadDefaultEvent("${pageContext.request.contextPath}/");
+        });
+    </script>
   </body>
 </html>

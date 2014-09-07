@@ -53,6 +53,8 @@ public class BookShelfController {
     @RequestMapping(value = "/books/add", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity addBook(@RequestBody Book book){
+        System.out.println("add Book ...");
+        System.out.println(book.getIsbn());
         bookService.add(book);
         return new ResponseEntity(HttpStatus.CREATED);
     }
@@ -78,5 +80,15 @@ public class BookShelfController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
+    }
+
+    @RequestMapping(value = "/page/add", method = RequestMethod.GET)
+    public String loadPageAdd(){
+        return "add";
+    }
+
+    @RequestMapping(value = "/page/remove", method = RequestMethod.GET)
+    public String loadPageRemove(){
+        return "remove";
     }
 }
