@@ -28,3 +28,6 @@ function searchBooks(url){
     }); //end click
 
 }
+function loadAddPage(url){
+
+}

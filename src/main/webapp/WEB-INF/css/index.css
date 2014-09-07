@@ -1,10 +1,10 @@
 html {
-	background: rgb(231, 230, 231);
+	background: #2d343d;
 }
 body {
 	min-width: 1000px;
 	max-width: 1200px;
-	margin: 4em auto;
+	margin: 10em auto;
 	padding:2em;
 	background: white;
 	position: relative;
