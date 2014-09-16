@@ -36,7 +36,7 @@ public class BookDao {
     }
 
     public void removeBookByISBN(String isbn) {
-        String sql = DELETE_BOOK + " \'"+isbn + "\'";
+        String sql = DELETE_BOOK + "\'"+isbn + "\'";
         jdbcTemplate.update(sql);
     }
 

@@ -33,8 +33,6 @@ public class BookDaoTest {
         List<Book> books = bookDao.getAllBooks();
         verify(jdbcTemplate,times(1)).query(Mockito.eq(bookDao.SELECT_ALL_BOOK), Mockito.any(BookRowMapper.class));
         assertThat(books.size(), is(1));
-//        List<Book> value = bookDao.getAllBooks();
-//        System.out.println(value.size());
     }
 
     @Test
@@ -48,40 +46,16 @@ public class BookDaoTest {
 
     @Test
     public void shouldRemoveBookByISBN() throws Exception{
-//        String sql = bookDao.DELETE_BOOK + "isbn_5";
-//        bookDao.removeBookByISBN("isbn_5");
-//        verify(jdbcTemplate,times(1)).update(Mockito.eq(sql));
+        String sql = bookDao.DELETE_BOOK + "\'"+"isbn_5" + "\'";
+        bookDao.removeBookByISBN("isbn_5");
+        verify(jdbcTemplate,times(1)).update(Mockito.eq(sql));
     }
 
     @Test
       public void shouldGetBookByTitle(){
-//          bookDao.getBooksByTitle("isbn_5");
-//          String sql = bookDao.GET_BOOK + "%" + "isbn_5" + "%";
-//          verify(jdbcTemplate,times(1)).query(Mockito.eq(sql), Mockito.any(BookRowMapper.class));
+          bookDao.getBooksByTitle("Java");
+          String sql = bookDao.GET_BOOK + "\'%" + "Java" + "%\'";
+          verify(jdbcTemplate,times(1)).query(Mockito.eq(sql), Mockito.any(BookRowMapper.class));
       }
 
-//    @Test
-//    public void shouldUpdate(){
-//        Employee employee = new Employee(11111,"name1","2014-1");
-//        bookDao.update(employee);
-//        verify(jdbcTemplate,times(1)).update(Mockito.eq(EmployeeDao.UPDATE_EMPLOYEE), Mockito.eq(11111), Mockito.eq("name1"), Mockito.eq("2014-1"));
-//    }
-//
-//    @Test
-//    public void shouldAutoCompleteEmployeeNameId(){
-//
-//        bookDao.autoCompleteEmployeeNameId("aa");
-//        String sql = "select * from EMPLOYEE where NAME like '%aa%'";
-//        verify(jdbcTemplate,times(1)).query(Mockito.eq(sql), Mockito.any(EmployeeRowMapper.class));
-//    }
-//
-//    @Test
-//    public void shouldInsertTheUpdateEmployee(){
-//        List<Employee> employees = new ArrayList<Employee>();
-//        employees.add(new Employee(12345, "name", "2014-2"));
-//        bookDao.saveEmployee(employees);
-//        String sql = bookDao.GET_EMPLOYEE+12345;
-//        verify(jdbcTemplate,times(1)).query(Mockito.eq(sql), Mockito.any(EmployeeRowMapper.class));
-//       verify(jdbcTemplate,times(1)).update(Mockito.eq(EmployeeDao.INSERT_EMPLOYEE), Mockito.eq(12345), Mockito.eq("name"), Mockito.eq("2014-2"));
-//    }
 }

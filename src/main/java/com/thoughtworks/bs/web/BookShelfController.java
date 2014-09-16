@@ -53,8 +53,6 @@ public class BookShelfController {
     @RequestMapping(value = "/books/add", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity addBook(@RequestBody Book book){
-        System.out.println("add Book ...");
-        System.out.println(book.getIsbn());
         bookService.add(book);
         return new ResponseEntity(HttpStatus.CREATED);
     }
@@ -69,7 +67,6 @@ public class BookShelfController {
     @RequestMapping(value = "/books/title/{title}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<Book>> getBooksByTitle(@PathVariable("title") String title){
-//        System.out.println("getBooksByTitle");
         List<Book> result = bookService.getBooksByTitle(title);
         if(result.size() == 0){
             return new ResponseEntity<List<Book>>(HttpStatus.NOT_FOUND);
