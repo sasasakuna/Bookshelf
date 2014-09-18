@@ -1,10 +1,17 @@
 package com.thoughtworks.bs.domain;
 
-/**
- * Created by hjli on 8/12/14.
- */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "book")
 public class Book {
 
+    @Id
+    @Column(name = "isbn")
     public String getIsbn() {
 
         return isbn;
@@ -13,6 +20,7 @@ public class Book {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
 
     private String isbn;
     private String title;
@@ -26,7 +34,7 @@ public class Book {
         this.author = author;
         this.price = price;
     }
-
+    @Column(name = "location")
     public String getLocation() {
         return location;
     }
@@ -35,6 +43,7 @@ public class Book {
         this.location = location;
     }
 
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -43,6 +52,7 @@ public class Book {
         this.title = title;
     }
 
+    @Column(name = "author")
     public String getAuthor() {
         return author;
     }
@@ -51,6 +61,7 @@ public class Book {
         this.author = author;
     }
 
+    @Column(name = "price")
     public String getPrice() {
         return price;
     }

@@ -21,6 +21,9 @@ dependencies {
             'org.codehaus.jackson:jackson-mapper-asl:1.9.13',
             'jstl:jstl:1.2',
             'javax.servlet:javax.servlet-api:3.0.1',
+            'org.springframework:spring-orm:4.1.0.RELEASE',
+            'org.slf4j:slf4j-api:1.7.7',
+            'org.hibernate:hibernate-core:4.3.6.Final',
 
     )
     testCompile 'junit:junit:4.10'
